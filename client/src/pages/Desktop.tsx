@@ -108,7 +108,7 @@ export const Desktop = (): JSX.Element => {
           <img
             src="/figmaAssets/chatgpt-image-may-6--2026--12-44-13-pm-1.png"
             alt="₿ is better illustration"
-            className="w-full md:w-[200px] h-auto object-contain justify-self-end md:justify-self-start"
+            className="w-3/4 md:w-[200px] h-auto object-contain justify-self-end md:justify-self-start"
           />
         </div>
       </section>
@@ -127,7 +127,7 @@ export const Desktop = (): JSX.Element => {
           <img
             src="/figmaAssets/chatgpt-image-may-6--2026--01-22-33-pm-1.png"
             alt="₿ is on-brand illustration"
-            className="w-full md:w-[200px] h-auto object-contain justify-self-end md:justify-self-start"
+            className="w-3/4 md:w-[200px] h-auto object-contain justify-self-end md:justify-self-start"
           />
         </div>
       </section>
@@ -145,7 +145,7 @@ export const Desktop = (): JSX.Element => {
           <img
             src="/figmaAssets/chatgpt-image-may-6--2026--02-58-58-pm-1.png"
             alt="Teach your agent illustration"
-            className="w-full md:w-[180px] h-auto object-contain justify-self-end md:justify-self-start"
+            className="w-3/4 md:w-[180px] h-auto object-contain justify-self-end md:justify-self-start"
           />
         </div>
       </section>
