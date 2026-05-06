@@ -63,8 +63,8 @@ export const Desktop = (): JSX.Element => {
       <section className="max-w-3xl mx-auto px-6 pt-10 md:pt-16 pb-10">
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-10">
           {/* Phone */}
-          <div className="w-full md:w-[50%] flex-shrink-0 flex flex-col items-center">
-            <div className="w-full max-w-[360px]">
+          <div className="w-full md:w-[40%] flex-shrink-0 flex flex-col items-center md:items-start">
+            <div className="w-full max-w-[300px]">
               <img
                 src="/figmaAssets/iphone--5--1.png"
                 alt="iPhone showing ₿ symbol"
