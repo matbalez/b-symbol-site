@@ -116,7 +116,7 @@ export const Desktop = (): JSX.Element => {
       {/* ===== ₿ IS ON-BRAND ===== */}
       <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">₿ IS ON-BRAND</h2>
-        <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-center">
+        <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
           <p className="text-base md:text-[15px] leading-7">
             Thinking ahead, one day most of the world's prices will be denominated in quantities of bitcoin, as it becomes every day money.
             <br /><br />
@@ -135,7 +135,7 @@ export const Desktop = (): JSX.Element => {
       {/* ===== TEACH YOUR AGENT ===== */}
       <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">TEACH YOUR AGENT</h2>
-        <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-center">
+        <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
           <p className="text-base md:text-[15px] leading-7">
             With this convention being relatively new, AI agents may not yet be up to speed, given their training on legacy data.
             <br /><br />
