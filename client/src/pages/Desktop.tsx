@@ -61,7 +61,7 @@ export const Desktop = (): JSX.Element => {
 
       {/* ===== Phone + intro text ===== */}
       <section className="max-w-3xl mx-auto px-6 pt-10 md:pt-16 pb-10">
-        <div className="flex flex-col md:flex-row items-start gap-8 md:gap-10">
+        <div className="flex flex-col-reverse md:flex-row items-start gap-8 md:gap-10">
           {/* Phone */}
           <div className="w-full md:w-[40%] flex-shrink-0 flex flex-col items-center md:items-start">
             <div className="w-full max-w-[300px]">
