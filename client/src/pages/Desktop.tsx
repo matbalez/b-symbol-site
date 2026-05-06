@@ -97,7 +97,7 @@ export const Desktop = (): JSX.Element => {
       {/* ===== ₿ IS BETTER ===== */}
       <section className="max-w-3xl mx-auto px-6 pt-2 md:pt-4 pb-12 md:pb-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">₿ IS BETTER</h2>
-        <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-center">
+        <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
           <p className="text-base md:text-[15px] leading-7">
             Historically, bitcoin wallets have shown bitcoin quantities as long decimal quantities, which are effectively illegible to the human eye.
             <br /><br />
