@@ -20,19 +20,19 @@ export const Desktop = (): JSX.Element => {
         {/* Desktop scattered layout */}
         <div className="hidden md:grid grid-cols-12 gap-x-2 items-start">
           {/* USE — top-left */}
-          <h1 className="col-span-7 font-bold leading-none tracking-tight text-[clamp(48px,7vw,80px)]">
+          <h1 className="col-span-6 font-bold leading-none tracking-tight text-[clamp(48px,7vw,80px)]">
             USE
           </h1>
-          {/* Big colorful ₿ — top-right column, height-constrained */}
-          <div className="col-span-5 row-span-3 flex justify-end items-start -mt-4">
+          {/* Big colorful ₿ — middle/right, smaller and shifted left */}
+          <div className="col-span-6 row-span-3 flex justify-start items-start pl-4 -mt-4">
             <img
               src="/figmaAssets/image-10.png"
               alt="₿ symbol"
-              className="w-auto h-[280px] lg:h-[320px] object-contain"
+              className="w-auto h-[230px] lg:h-[260px] object-contain"
             />
           </div>
-          {/* THE — center, indented */}
-          <h1 className="col-span-7 col-start-1 font-bold leading-none tracking-tight text-[clamp(48px,7vw,80px)] text-center pr-12 mt-6">
+          {/* THE — pushed far right under USE row */}
+          <h1 className="col-span-6 col-start-1 font-bold leading-none tracking-tight text-[clamp(48px,7vw,80px)] text-right pr-2 mt-6">
             THE
           </h1>
           {/* SYMBOL — left-indented */}
@@ -67,13 +67,15 @@ export const Desktop = (): JSX.Element => {
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-10">
           {/* Phone */}
           <div className="w-full md:w-[42%] flex-shrink-0 flex flex-col items-center">
-            <img
-              src="/figmaAssets/iphone--5--1.png"
-              alt="iPhone showing ₿ symbol"
-              className="w-full max-w-[260px] md:max-w-none h-auto object-contain"
-            />
-            {/* Short light-gray divider under phone */}
-            <hr className="border-t border-[#c6c4c4] w-[110%] mt-6" />
+            <div className="w-full max-w-[240px] md:max-w-[220px]">
+              <img
+                src="/figmaAssets/iphone--5--1.png"
+                alt="iPhone showing ₿ symbol"
+                className="block w-full h-auto object-contain"
+              />
+              {/* Short light-gray divider exactly under the iPhone width */}
+              <hr className="border-t border-[#d8d8d8] w-full m-0" />
+            </div>
           </div>
 
           {/* Intro text – both bold lines highlighted yellow */}
@@ -98,7 +100,7 @@ export const Desktop = (): JSX.Element => {
       {/* ===== ₿ IS BETTER ===== */}
       <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">₿ IS BETTER</h2>
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
           <p className="text-base md:text-[15px] leading-7">
             Historically, bitcoin wallets have shown bitcoin quantities as long decimal quantities, which are effectively illegible to the human eye.
             <br /><br />
@@ -109,7 +111,7 @@ export const Desktop = (): JSX.Element => {
           <img
             src="/figmaAssets/chatgpt-image-may-6--2026--12-44-13-pm-1.png"
             alt="₿ is better illustration"
-            className="w-full h-auto object-contain"
+            className="w-full md:w-[220px] h-auto object-contain justify-self-end"
           />
         </div>
       </section>
@@ -117,7 +119,7 @@ export const Desktop = (): JSX.Element => {
       {/* ===== ₿ IS ON-BRAND ===== */}
       <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">₿ IS ON-BRAND</h2>
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
           <p className="text-base md:text-[15px] leading-7">
             Thinking ahead, one day most of the world's prices will be denominated in quantities of bitcoin, as it becomes every day money.
             <br /><br />
@@ -128,7 +130,7 @@ export const Desktop = (): JSX.Element => {
           <img
             src="/figmaAssets/chatgpt-image-may-6--2026--01-22-33-pm-1.png"
             alt="₿ is on-brand illustration"
-            className="w-full h-auto object-contain"
+            className="w-full md:w-[220px] h-auto object-contain justify-self-end"
           />
         </div>
       </section>
@@ -136,7 +138,7 @@ export const Desktop = (): JSX.Element => {
       {/* ===== TEACH YOUR AGENT ===== */}
       <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">TEACH YOUR AGENT</h2>
-        <div className="grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
           <p className="text-base md:text-[15px] leading-7">
             With this convention being relatively new, AI agents may not yet be up to speed, given their training on legacy data.
             <br /><br />
@@ -146,7 +148,7 @@ export const Desktop = (): JSX.Element => {
           <img
             src="/figmaAssets/chatgpt-image-may-6--2026--02-58-58-pm-1.png"
             alt="Teach your agent illustration"
-            className="w-full h-auto object-contain"
+            className="w-full md:w-[180px] h-auto object-contain justify-self-end"
           />
         </div>
       </section>
@@ -178,17 +180,17 @@ export const Desktop = (): JSX.Element => {
           {wallets.map((wallet) => (
             <div
               key={wallet.name}
-              className="flex items-stretch border border-[#d8d8d8] -mt-px"
+              className="flex items-stretch border border-[#d8d8d8] -mt-px bg-white"
             >
-              <div className="w-20 h-20 flex-shrink-0 flex items-center justify-center border-r border-[#d8d8d8] bg-white p-2">
+              <div className="w-32 md:w-36 flex-shrink-0 flex items-center justify-center border-r border-[#d8d8d8] p-5">
                 <img
                   src={wallet.logo}
                   alt={wallet.name}
-                  className="max-w-full max-h-full object-contain"
+                  className="max-w-full max-h-16 object-contain"
                 />
               </div>
-              <div className="flex-1 flex items-center px-6 bg-[#f5f5f5]">
-                <span className="font-bold text-[#c6c4c4] text-lg md:text-2xl tracking-tight leading-none">
+              <div className="flex-1 flex items-center pl-10 pr-6 py-4">
+                <span className="font-bold text-black text-lg md:text-2xl tracking-tight leading-none">
                   {wallet.name}
                 </span>
               </div>
@@ -199,7 +201,7 @@ export const Desktop = (): JSX.Element => {
 
       {/* ===== Drop us a line ===== */}
       <section className="max-w-3xl mx-auto px-6 pb-12 md:pb-16">
-        <p className="text-base md:text-[15px] leading-7">
+        <p className="text-base md:text-[15px] leading-7 max-w-md">
           Have you spotted a bitcoin wallet or product that uses the ₿ symbol convention?{" "}
           <span className="underline cursor-pointer">Drop us a line</span> and we'll add them here.
         </p>
@@ -208,7 +210,7 @@ export const Desktop = (): JSX.Element => {
       {/* ===== Footer ===== */}
       <footer className="bg-[#939393] w-full py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-6">
-          <p className="text-white text-sm md:text-[15px] leading-7">
+          <p className="text-white text-sm md:text-[15px] leading-7 max-w-md">
             This ₿ symbol convention originated with <span className="underline cursor-pointer">BIP-177</span> by John Carvhallo in late 2024.
             <br /><br />
             It is documented in the <span className="underline cursor-pointer">Bitcoin Design Guide</span>.
