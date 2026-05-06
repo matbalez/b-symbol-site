@@ -173,17 +173,17 @@ export const Desktop = (): JSX.Element => {
         <p className="text-base md:text-[15px] leading-7 mb-8">
           These forward-thinking wallets and bitcoin products have already adopted this convention:
         </p>
-        <div className="flex flex-col max-w-md mx-auto">
+        <div className="flex flex-col max-w-lg mx-auto">
           {wallets.map((wallet) => (
             <div
               key={wallet.name}
-              className="flex items-stretch border border-[#d8d8d8] -mt-px bg-white"
+              className="flex items-stretch border border-[#d8d8d8] -mt-px bg-white h-[96px]"
             >
               <div className="w-32 md:w-36 flex-shrink-0 flex items-center justify-center border-r border-[#d8d8d8] p-5">
                 <img
                   src={wallet.logo}
                   alt={wallet.name}
-                  className="max-w-full max-h-16 object-contain"
+                  className="max-w-full max-h-12 object-contain"
                 />
               </div>
               <div className="flex-1 flex items-center pl-10 pr-6 py-4">
