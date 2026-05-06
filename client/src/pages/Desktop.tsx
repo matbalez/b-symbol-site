@@ -18,27 +18,24 @@ export const Desktop = (): JSX.Element => {
       {/* ===== HERO: scattered USE / THE / SYMBOL with big ₿ ===== */}
       <section className="max-w-2xl mx-auto px-6 pt-12 md:pt-16">
         {/* Desktop scattered layout */}
-        <div className="hidden md:grid grid-cols-12 gap-x-2 items-start">
-          {/* USE — top-left */}
-          <h1 className="col-span-6 font-bold leading-none tracking-tight text-[clamp(48px,7vw,80px)]">
-            USE
-          </h1>
-          {/* Big colorful ₿ — right side, taller */}
-          <div className="col-span-6 row-span-3 flex justify-end items-start -mt-6">
-            <img
-              src="/figmaAssets/image-10.png"
-              alt="₿ symbol"
-              className="w-auto h-[340px] lg:h-[400px] object-contain"
-            />
+        <div className="hidden md:block relative">
+          {/* Big colorful ₿ — absolute, sized to span only USE+THE rows */}
+          <img
+            src="/figmaAssets/image-10.png"
+            alt="₿ symbol"
+            className="absolute right-0 top-0 h-[210px] lg:h-[230px] w-auto object-contain z-0"
+          />
+          <div className="relative z-10">
+            <h1 className="font-bold leading-[1.05] tracking-tight text-[64px] lg:text-[72px]">
+              USE
+            </h1>
+            <h1 className="font-bold leading-[1.05] tracking-tight text-[64px] lg:text-[72px] pl-[32%]">
+              THE
+            </h1>
+            <h1 className="font-bold leading-[1.05] tracking-tight text-[64px] lg:text-[72px] pl-[8%]">
+              SYMBOL
+            </h1>
           </div>
-          {/* THE — pushed far right under USE row */}
-          <h1 className="col-span-6 col-start-1 font-bold leading-none tracking-tight text-[clamp(48px,7vw,80px)] text-right pr-2 mt-6">
-            THE
-          </h1>
-          {/* SYMBOL — left-indented */}
-          <h1 className="col-span-7 col-start-1 font-bold leading-none tracking-tight text-[clamp(48px,7vw,80px)] pl-8 mt-6">
-            SYMBOL
-          </h1>
         </div>
 
         {/* Mobile stacked layout */}
@@ -66,8 +63,8 @@ export const Desktop = (): JSX.Element => {
       <section className="max-w-2xl mx-auto px-6 pt-10 md:pt-16 pb-10">
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-10">
           {/* Phone */}
-          <div className="w-full md:w-[48%] flex-shrink-0 flex flex-col items-center">
-            <div className="w-full max-w-[320px]">
+          <div className="w-full md:w-[45%] flex-shrink-0 flex flex-col items-center">
+            <div className="w-full max-w-[230px]">
               <img
                 src="/figmaAssets/iphone--5--1.png"
                 alt="iPhone showing ₿ symbol"
