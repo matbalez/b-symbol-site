@@ -16,19 +16,19 @@ export const Desktop = (): JSX.Element => {
     <div className="bg-white w-full overflow-x-hidden font-['Inter',Helvetica] text-black">
 
       {/* ===== HERO: scattered USE / THE / SYMBOL with big ₿ ===== */}
-      <section className="max-w-3xl mx-auto px-6 pt-12 md:pt-16">
+      <section className="max-w-2xl mx-auto px-6 pt-12 md:pt-16">
         {/* Desktop scattered layout */}
         <div className="hidden md:grid grid-cols-12 gap-x-2 items-start">
           {/* USE — top-left */}
           <h1 className="col-span-6 font-bold leading-none tracking-tight text-[clamp(48px,7vw,80px)]">
             USE
           </h1>
-          {/* Big colorful ₿ — middle/right, smaller and shifted left */}
-          <div className="col-span-6 row-span-3 flex justify-start items-start pl-4 -mt-4">
+          {/* Big colorful ₿ — right side, taller */}
+          <div className="col-span-6 row-span-3 flex justify-end items-start -mt-6">
             <img
               src="/figmaAssets/image-10.png"
               alt="₿ symbol"
-              className="w-auto h-[230px] lg:h-[260px] object-contain"
+              className="w-auto h-[340px] lg:h-[400px] object-contain"
             />
           </div>
           {/* THE — pushed far right under USE row */}
@@ -63,11 +63,11 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== Phone + intro text ===== */}
-      <section className="max-w-3xl mx-auto px-6 pt-10 md:pt-16 pb-10">
+      <section className="max-w-2xl mx-auto px-6 pt-10 md:pt-16 pb-10">
         <div className="flex flex-col md:flex-row items-start gap-8 md:gap-10">
           {/* Phone */}
-          <div className="w-full md:w-[42%] flex-shrink-0 flex flex-col items-center">
-            <div className="w-full max-w-[240px] md:max-w-[220px]">
+          <div className="w-full md:w-[48%] flex-shrink-0 flex flex-col items-center">
+            <div className="w-full max-w-[320px]">
               <img
                 src="/figmaAssets/iphone--5--1.png"
                 alt="iPhone showing ₿ symbol"
@@ -98,7 +98,7 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== ₿ IS BETTER ===== */}
-      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-2xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">₿ IS BETTER</h2>
         <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
           <p className="text-base md:text-[15px] leading-7">
@@ -117,7 +117,7 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== ₿ IS ON-BRAND ===== */}
-      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-2xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">₿ IS ON-BRAND</h2>
         <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
           <p className="text-base md:text-[15px] leading-7">
@@ -136,7 +136,7 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== TEACH YOUR AGENT ===== */}
-      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-2xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">TEACH YOUR AGENT</h2>
         <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
           <p className="text-base md:text-[15px] leading-7">
@@ -154,7 +154,7 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== TRY IT OUT ===== */}
-      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-2xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">TRY IT OUT</h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <p className="text-base md:text-[15px] leading-7">
@@ -171,7 +171,7 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== JOIN THE ₿-LIST ===== */}
-      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-2xl mx-auto px-6 py-12 md:py-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-4">JOIN THE ₿-LIST</h2>
         <p className="text-base md:text-[15px] leading-7 mb-8">
           These forward-thinking wallets and bitcoin products have already adopted this convention:
@@ -200,7 +200,7 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== Drop us a line ===== */}
-      <section className="max-w-3xl mx-auto px-6 pb-12 md:pb-16">
+      <section className="max-w-2xl mx-auto px-6 pb-12 md:pb-16">
         <p className="text-base md:text-[15px] leading-7 max-w-md">
           Have you spotted a bitcoin wallet or product that uses the ₿ symbol convention?{" "}
           <span className="underline cursor-pointer">Drop us a line</span> and we'll add them here.
@@ -209,7 +209,7 @@ export const Desktop = (): JSX.Element => {
 
       {/* ===== Footer ===== */}
       <footer className="bg-[#939393] w-full py-12 md:py-16">
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="max-w-2xl mx-auto px-6">
           <p className="text-white text-sm md:text-[15px] leading-7 max-w-md">
             This ₿ symbol convention originated with <span className="underline cursor-pointer">BIP-177</span> by John Carvhallo in late 2024.
             <br /><br />
