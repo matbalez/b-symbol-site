@@ -95,7 +95,7 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== ₿ IS BETTER ===== */}
-      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      <section className="max-w-3xl mx-auto px-6 pt-2 md:pt-4 pb-12 md:pb-16">
         <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">₿ IS BETTER</h2>
         <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-center">
           <p className="text-base md:text-[15px] leading-7">
