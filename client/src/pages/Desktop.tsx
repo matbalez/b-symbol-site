@@ -173,7 +173,7 @@ export const Desktop = (): JSX.Element => {
         <p className="text-base md:text-[15px] leading-7 mb-8">
           These forward-thinking wallets and bitcoin products have already adopted this convention:
         </p>
-        <div className="flex flex-col">
+        <div className="flex flex-col max-w-md mx-auto">
           {wallets.map((wallet) => (
             <div
               key={wallet.name}
