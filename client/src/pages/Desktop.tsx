@@ -15,44 +15,51 @@ export const Desktop = (): JSX.Element => {
   return (
     <div className="bg-white w-full overflow-x-hidden font-['Inter',Helvetica]">
 
-      {/* Hero */}
-      <div className="max-w-5xl mx-auto px-6 pt-16 pb-8">
-        <div className="relative">
-          <h1 className="font-bold text-black text-[clamp(64px,12vw,160px)] leading-none tracking-tight">
-            USE
+      {/* Hero row: big text left, colorful ₿ right */}
+      <div className="max-w-5xl mx-auto px-6 pt-12">
+        <div className="flex items-start justify-between gap-4">
+          <h1 className="font-bold text-black text-[clamp(72px,13vw,160px)] leading-[0.9] tracking-tight">
+            USE<br />THE<br />SYMBOL
           </h1>
-          <div className="flex items-start gap-4">
-            <div className="flex-1">
-              <div className="relative inline-block">
-                <div className="absolute -bottom-2 left-0 w-full h-10 bg-[#f6ff00] -z-0" />
-                <h1 className="relative font-bold text-black text-[clamp(64px,12vw,160px)] leading-none tracking-tight z-10">
-                  THE ₿
-                </h1>
-              </div>
-              <h1 className="font-bold text-black text-[clamp(64px,12vw,160px)] leading-none tracking-tight">
-                SYMBOL
-              </h1>
-            </div>
-            <div className="hidden md:block w-[280px] lg:w-[380px] flex-shrink-0 -mt-4">
-              <img
-                src="/figmaAssets/iphone--5--1.png"
-                alt="iPhone showing ₿ symbol"
-                className="w-full h-auto object-cover"
-              />
-            </div>
+          <div className="w-[38%] flex-shrink-0 flex items-start justify-end pt-2">
+            <img
+              src="/figmaAssets/image-10.png"
+              alt="₿ symbol"
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
       </div>
 
-      {/* Intro text */}
-      <div className="max-w-5xl mx-auto px-6 pb-16">
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div className="md:col-start-2">
-            <p className="text-black text-lg md:text-xl leading-8">
-              <strong>Showing bitcoin quantities using the standard ₿ symbol is becoming the new normal.</strong>
-              <br /><br />
+      {/* Phone left, intro text right */}
+      <div className="max-w-5xl mx-auto px-6 pt-8 pb-12">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          {/* Phone image – left */}
+          <div className="w-full md:w-[45%] flex-shrink-0">
+            <img
+              src="/figmaAssets/iphone--5--1.png"
+              alt="iPhone showing ₿ symbol"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+
+          {/* Intro text – right, with yellow highlight on first bold sentence */}
+          <div className="flex-1 text-black text-lg md:text-xl leading-8">
+            <p>
+              <span className="relative inline">
+                <span className="relative z-10 font-bold">
+                  Showing bitcoin quantities using the standard ₿ symbol is becoming the new normal.
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="absolute left-0 bottom-0 w-full h-[55%] bg-[#f6ff00] -z-0"
+                />
+              </span>
+            </p>
+            <p className="mt-6">
               It's a clean, on-brand and future-proof way of representing any amount of bitcoin.
-              <br /><br />
+            </p>
+            <p className="mt-6">
               <strong>Try it</strong> out with <span className="underline cursor-pointer">a screenshot</span>.<br />
               <strong>Teach</strong> your agent to use <span className="underline cursor-pointer">the skill here</span>.<br />
               <strong>Nudge</strong> your favorite wallet to <span className="underline cursor-pointer">join the list of adopters</span>.
@@ -144,7 +151,7 @@ export const Desktop = (): JSX.Element => {
         <p className="text-black text-lg md:text-xl leading-8 mb-12">
           These forward-thinking wallets and bitcoin products have already adopted this convention:
         </p>
-        <div className="flex flex-col gap-0">
+        <div className="flex flex-col">
           {wallets.map((wallet) => (
             <div
               key={wallet.name}
