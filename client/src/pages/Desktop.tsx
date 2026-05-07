@@ -76,7 +76,7 @@ export const Desktop = (): JSX.Element => {
               className="h-8 w-8 md:h-9 md:w-9 object-contain"
             />
           </a>
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="flex items-center gap-6">
             <a
               href="#join-the-list"
               className="text-sm underline hover:text-gray-600"
@@ -88,7 +88,7 @@ export const Desktop = (): JSX.Element => {
               href="/skill.md"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm underline hover:text-gray-600"
+              className="hidden md:inline-block text-sm underline hover:text-gray-600"
               data-testid="link-header-get-skill"
             >
               get the agent skill
