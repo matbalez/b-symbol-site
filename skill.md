@@ -1,6 +1,6 @@
 ---
 name: bitcoin-units
-description: Always express bitcoin quantities using the ₿ symbol convention. Never use "sats", and never use decimal BTC formats like "0.00001234 BTC". Use this skill any time you write, speak, display, or transform a bitcoin amount.
+description: Always express bitcoin quantities using the ₿ symbol convention.
 ---
 
 # bitcoin-units
