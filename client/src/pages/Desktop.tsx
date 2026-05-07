@@ -145,7 +145,7 @@ export const Desktop = (): JSX.Element => {
           <img
             src="/figmaAssets/chatgpt-image-may-6--2026--02-58-58-pm-1.png"
             alt="Teach your agent illustration"
-            className="w-3/4 md:w-[180px] h-auto object-contain justify-self-center md:justify-self-start"
+            className="w-3/4 md:w-[150px] h-auto object-contain justify-self-center md:justify-self-start md:ml-10"
           />
         </div>
       </section>
