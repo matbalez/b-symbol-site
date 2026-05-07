@@ -2,6 +2,8 @@ import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
 import multer from "multer";
 import OpenAI, { toFile } from "openai";
+import path from "path";
+import fs from "fs";
 import { storage } from "./storage";
 
 const upload = multer({ storage: multer.memoryStorage() });
@@ -12,6 +14,18 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  app.get("/skill.md", (_req: Request, res: Response) => {
+    const candidates = [
+      path.resolve(process.cwd(), "client/public/skill.md"),
+      path.resolve(process.cwd(), "dist/public/skill.md"),
+      path.resolve(process.cwd(), "skill.md"),
+    ];
+    const file = candidates.find((p) => fs.existsSync(p));
+    if (!file) return res.status(404).send("skill.md not found");
+    res.setHeader("Content-Type", "text/markdown; charset=utf-8");
+    res.sendFile(file);
+  });
+
   app.post(
     "/api/edit-image",
     upload.single("image"),
