@@ -302,7 +302,7 @@ export const Desktop = (): JSX.Element => {
             >
               ×
             </button>
-            <h3 className="font-bold text-xl mb-4">Surgical ₿ edit</h3>
+            <h3 className="font-bold text-xl mb-4">Using the ₿ Convention</h3>
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <p className="text-sm font-semibold mb-2 text-gray-600">Original</p>
@@ -311,7 +311,7 @@ export const Desktop = (): JSX.Element => {
                 )}
               </div>
               <div>
-                <p className="text-sm font-semibold mb-2 text-gray-600">Edited</p>
+                <p className="text-sm font-semibold mb-2 text-gray-600">Using ₿:</p>
                 <div className="w-full min-h-[200px] rounded-lg border border-[#ececec] flex items-center justify-center bg-gray-50">
                   {isLoading && (
                     <div className="flex flex-col items-center gap-3 py-12" data-testid="status-loading">
