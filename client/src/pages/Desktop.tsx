@@ -51,16 +51,16 @@ export const Desktop = (): JSX.Element => {
   };
 
   const wallets = [
-    { name: "CASH APP", logo: "/figmaAssets/cashapp-2.png" },
-    { name: "SQUARE", logo: "/figmaAssets/image-11.png" },
-    { name: "BITKIT", logo: "/figmaAssets/image-9.png" },
-    { name: "ALBY", logo: "/figmaAssets/image-14.png" },
-    { name: "WALLET OF SATOSHI", logo: "/figmaAssets/image-15.png" },
-    { name: "LEXE WALLET", logo: "/figmaAssets/image-12.png" },
-    { name: "BLITZ", logo: "/figmaAssets/image-10-1.png" },
-    { name: "CASHU", logo: "/figmaAssets/image-13.png" },
-    { name: "AGICASH", logo: "/figmaAssets/oabxam9h-400x400-2.png" },
-    { name: "STASH PAY", logo: "/figmaAssets/image-16.png" },
+    { name: "CASH APP", logo: "/figmaAssets/cashapp-2.png", url: "https://cash.app/" },
+    { name: "SQUARE", logo: "/figmaAssets/image-11.png", url: "https://squareup.com/ca/en/point-of-sale" },
+    { name: "BITKIT", logo: "/figmaAssets/image-9.png", url: "https://bitkit.to/" },
+    { name: "ALBY", logo: "/figmaAssets/image-14.png", url: "https://getalby.com/" },
+    { name: "WALLET OF SATOSHI", logo: "/figmaAssets/image-15.png", url: "https://www.walletofsatoshi.com/" },
+    { name: "LEXE WALLET", logo: "/figmaAssets/image-12.png", url: "https://www.lexe.app/" },
+    { name: "BLITZ", logo: "/figmaAssets/image-10-1.png", url: "https://blitzwalletapp.com/" },
+    { name: "CASHU", logo: "/figmaAssets/image-13.png", url: "https://wallet.cashu.me/welcome" },
+    { name: "AGICASH", logo: "/figmaAssets/oabxam9h-400x400-2.png", url: "https://agi.cash/" },
+    { name: "STASH PAY", logo: "/figmaAssets/image-16.png", url: "https://stashpay.me/" },
   ];
 
   return (
@@ -238,11 +238,15 @@ export const Desktop = (): JSX.Element => {
         </p>
         <div className="flex flex-col max-w-lg mx-auto">
           {wallets.map((wallet) => (
-            <div
+            <a
               key={wallet.name}
-              className="flex items-stretch border border-[#ececec] -mt-px bg-white h-[96px]"
+              href={wallet.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-stretch border border-[#ececec] -mt-px bg-white h-[96px] transition-colors hover:bg-gray-50 hover:border-gray-300"
+              data-testid={`link-wallet-${wallet.name.toLowerCase().replace(/\s+/g, "-")}`}
             >
-              <div className="w-32 md:w-36 flex-shrink-0 flex items-center justify-center border-r border-[#ececec] p-5">
+              <div className="w-32 md:w-36 flex-shrink-0 flex items-center justify-center border-r border-[#ececec] p-5 group-hover:border-gray-300">
                 <img
                   src={wallet.logo}
                   alt={wallet.name}
@@ -250,11 +254,11 @@ export const Desktop = (): JSX.Element => {
                 />
               </div>
               <div className="flex-1 flex items-center pl-10 pr-6 py-4">
-                <span className="font-bold text-black text-lg md:text-2xl tracking-tight leading-none">
+                <span className="font-bold text-black text-lg md:text-2xl tracking-tight leading-none group-hover:underline">
                   {wallet.name}
                 </span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
