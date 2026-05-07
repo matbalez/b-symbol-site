@@ -99,13 +99,13 @@ export const Desktop = (): JSX.Element => {
             className="absolute right-[12%] top-0 h-[280px] lg:h-[320px] w-auto object-contain z-0"
           />
           <div className="relative z-10">
-            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px]">
+            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] text-shimmer">
               USE
             </h1>
-            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] pl-[26%]">
+            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] pl-[26%] text-shimmer">
               THE
             </h1>
-            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] pl-[6%] mt-12 lg:mt-16">
+            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] pl-[6%] mt-12 lg:mt-16 text-shimmer">
               SYMBOL
             </h1>
           </div>
@@ -113,10 +113,10 @@ export const Desktop = (): JSX.Element => {
 
         {/* Mobile stacked layout */}
         <div className="md:hidden">
-          <h1 className="font-bold leading-none tracking-tight text-[18vw]">
+          <h1 className="font-bold leading-none tracking-tight text-[18vw] text-shimmer">
             USE
           </h1>
-          <h1 className="font-bold leading-none tracking-tight text-[18vw] mt-12 text-center">
+          <h1 className="font-bold leading-none tracking-tight text-[18vw] mt-12 text-center text-shimmer">
             THE
           </h1>
           <div className="flex justify-center my-8">
@@ -126,7 +126,7 @@ export const Desktop = (): JSX.Element => {
               className="w-[60%] h-auto object-contain"
             />
           </div>
-          <h1 className="font-bold leading-none tracking-tight text-[18vw] mt-4">
+          <h1 className="font-bold leading-none tracking-tight text-[18vw] mt-4 text-shimmer">
             SYMBOL
           </h1>
         </div>
