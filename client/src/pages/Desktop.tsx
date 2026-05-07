@@ -80,7 +80,7 @@ export const Desktop = (): JSX.Element => {
             href="/skill.md"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-block text-sm font-semibold underline hover:text-gray-600"
+            className="hidden md:inline-block text-sm underline hover:text-gray-600"
             data-testid="link-header-get-skill"
           >
             get the agent skill
