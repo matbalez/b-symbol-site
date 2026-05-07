@@ -64,7 +64,29 @@ export const Desktop = (): JSX.Element => {
   ];
 
   return (
-    <div className="bg-white w-full overflow-x-hidden font-['Inter',Helvetica] text-black">
+    <div className="bg-white w-full overflow-x-hidden font-['Inter',Helvetica] text-black pt-14 md:pt-16">
+
+      {/* ===== Fixed header ===== */}
+      <header className="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur border-b border-[#ececec] h-14 md:h-16">
+        <div className="max-w-3xl mx-auto px-6 h-full flex items-center justify-between">
+          <a href="#top" className="flex items-center" data-testid="link-header-logo">
+            <img
+              src="/apple-touch-icon.png"
+              alt="₿ logo"
+              className="h-8 w-8 md:h-9 md:w-9 object-contain"
+            />
+          </a>
+          <a
+            href="/skill.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:inline-block text-sm font-semibold underline hover:text-gray-600"
+            data-testid="link-header-get-skill"
+          >
+            get the agent skill
+          </a>
+        </div>
+      </header>
 
       {/* ===== HERO: scattered USE / THE / SYMBOL with big ₿ ===== */}
       <section className="max-w-3xl mx-auto px-6 pt-12 md:pt-16">
