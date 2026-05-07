@@ -71,7 +71,7 @@ export const Desktop = (): JSX.Element => {
                 className="block w-full h-auto object-contain"
               />
               {/* Short light-gray divider exactly under the iPhone width */}
-              <hr className="border-t border-[#d8d8d8] w-2/3 mx-auto m-0" />
+              <hr className="border-t border-[#d8d8d8] w-5/6 mx-auto m-0" />
             </div>
           </div>
 
