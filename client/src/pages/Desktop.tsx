@@ -1,12 +1,28 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const Desktop = (): JSX.Element => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const carouselRef = useRef<HTMLDivElement | null>(null);
   const [originalUrl, setOriginalUrl] = useState<string | null>(null);
   const [resultUrl, setResultUrl] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(1);
+
+  useEffect(() => {
+    if (!modalOpen || !carouselRef.current) return;
+    const el = carouselRef.current;
+    el.scrollTo({ left: el.clientWidth, behavior: "auto" });
+    setActiveSlide(1);
+  }, [modalOpen]);
+
+  const onCarouselScroll = () => {
+    const el = carouselRef.current;
+    if (!el) return;
+    const idx = Math.round(el.scrollLeft / el.clientWidth);
+    if (idx !== activeSlide) setActiveSlide(idx);
+  };
 
   const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -338,14 +354,18 @@ export const Desktop = (): JSX.Element => {
               ×
             </button>
             <h3 className="font-bold text-xl mb-4">Using the ₿ Convention</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
+            <div
+              ref={carouselRef}
+              onScroll={onCarouselScroll}
+              className="flex md:grid md:grid-cols-2 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none scroll-smooth -mx-6 md:mx-0 px-6 md:px-0 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              <div className="snap-center shrink-0 basis-full md:basis-auto md:shrink min-w-0 pr-3 md:pr-0">
                 <p className="text-sm font-semibold mb-2 text-gray-600">Original</p>
                 {originalUrl && (
                   <img src={originalUrl} alt="Original" className="w-full h-auto rounded-lg border border-[#ececec]" data-testid="img-original" />
                 )}
               </div>
-              <div>
+              <div className="snap-center shrink-0 basis-full md:basis-auto md:shrink min-w-0 pl-3 md:pl-0">
                 <p className="text-sm font-semibold mb-2 text-gray-600">Using ₿:</p>
                 <div className="w-full min-h-[200px] rounded-lg border border-[#ececec] flex items-center justify-center bg-gray-50">
                   {isLoading && (
@@ -362,6 +382,25 @@ export const Desktop = (): JSX.Element => {
                   )}
                 </div>
               </div>
+            </div>
+            {/* Mobile pagination dots */}
+            <div className="md:hidden flex justify-center gap-2 mt-4" data-testid="carousel-dots">
+              {[0, 1].map((i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => {
+                    const el = carouselRef.current;
+                    if (!el) return;
+                    el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
+                  }}
+                  className={`h-2 w-2 rounded-full transition-colors ${
+                    activeSlide === i ? "bg-black" : "bg-gray-300"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                  data-testid={`dot-slide-${i}`}
+                />
+              ))}
             </div>
             {resultUrl && !isLoading && (
               <div className="mt-6 flex justify-end">
