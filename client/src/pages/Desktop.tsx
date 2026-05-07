@@ -362,7 +362,7 @@ export const Desktop = (): JSX.Element => {
               <div className="snap-center shrink-0 basis-full md:basis-auto md:shrink min-w-0 pr-3 md:pr-0">
                 <p className="text-sm font-semibold mb-2 text-gray-600">Original</p>
                 {originalUrl && (
-                  <img src={originalUrl} alt="Original" className="w-full h-auto md:max-h-[60vh] md:w-auto md:mx-auto md:object-contain rounded-lg border border-[#ececec]" data-testid="img-original" />
+                  <img src={originalUrl} alt="Original" className="max-h-[55vh] w-auto mx-auto md:max-h-[60vh] object-contain rounded-lg border border-[#ececec]" data-testid="img-original" />
                 )}
               </div>
               <div className="snap-center shrink-0 basis-full md:basis-auto md:shrink min-w-0 pl-3 md:pl-0">
@@ -375,7 +375,7 @@ export const Desktop = (): JSX.Element => {
                     </div>
                   )}
                   {!isLoading && resultUrl && (
-                    <img src={resultUrl} alt="Edited" className="w-full h-auto md:max-h-[60vh] md:w-auto md:mx-auto md:object-contain rounded-lg" data-testid="img-result" />
+                    <img src={resultUrl} alt="Edited" className="max-h-[55vh] w-auto mx-auto md:max-h-[60vh] object-contain rounded-lg" data-testid="img-result" />
                   )}
                   {!isLoading && errorMsg && (
                     <p className="text-sm text-red-600 p-4 text-center" data-testid="text-error">{errorMsg}</p>
