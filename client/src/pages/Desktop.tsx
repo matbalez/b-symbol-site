@@ -111,10 +111,10 @@ export const Desktop = (): JSX.Element => {
             <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px]">
               USE
             </h1>
-            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] pl-[26%]">
+            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] pl-[14%]">
               THE
             </h1>
-            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] pl-[6%] mt-12 lg:mt-16">
+            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] mt-12 lg:mt-16">
               SYMBOL
             </h1>
           </div>
