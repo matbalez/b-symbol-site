@@ -137,9 +137,9 @@ export const Desktop = (): JSX.Element => {
               It's a clean, on-brand and future-proof way of representing any amount of bitcoin.
             </p>
             <p className="mt-5">
-              <strong>Try it</strong> out with <span className="underline cursor-pointer">a screenshot</span>.<br />
-              <strong>Teach</strong> your agent to use <span className="underline cursor-pointer">the skill here</span>.<br />
-              <strong>Nudge</strong> your favorite wallet to <span className="underline cursor-pointer">join the list of adopters</span>.
+              <strong>Try it</strong> out with <a href="#try-it-out" className="underline cursor-pointer hover:text-gray-600" data-testid="link-try-screenshot">a screenshot</a>.<br />
+              <strong>Teach</strong> your agent to use <a href="/skill.md" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-600" data-testid="link-skill-here">the skill here</a>.<br />
+              <strong>Nudge</strong> your favorite wallet to <a href="#join-the-list" className="underline cursor-pointer hover:text-gray-600" data-testid="link-join-adopters">join the list of adopters</a>.
             </p>
           </div>
         </div>
@@ -191,7 +191,7 @@ export const Desktop = (): JSX.Element => {
             With this convention being relatively new, AI agents may not yet be up to speed, given their training on legacy data.
             <br /><br />
             Get your agent caught-up and using the ₿ symbol instead of sats for good, by having them learn this{" "}
-            <span className="underline cursor-pointer">bitcoin-units skill</span>.
+            <a href="/skill.md" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-600" data-testid="link-bitcoin-units-skill">bitcoin-units skill</a>.
           </p>
           <img
             src="/figmaAssets/chatgpt-image-may-6--2026--02-58-58-pm-1.png"
@@ -202,7 +202,7 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== TRY IT OUT ===== */}
-      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      <section id="try-it-out" className="max-w-3xl mx-auto px-6 py-12 md:py-16 scroll-mt-8">
         <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-6">TRY IT OUT</h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <p className="text-base md:text-[15px] leading-7">
@@ -231,7 +231,7 @@ export const Desktop = (): JSX.Element => {
       </section>
 
       {/* ===== JOIN THE ₿-LIST ===== */}
-      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+      <section id="join-the-list" className="max-w-3xl mx-auto px-6 py-12 md:py-16 scroll-mt-8">
         <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-4">JOIN THE ₿-LIST</h2>
         <p className="text-base md:text-[15px] leading-7 mb-8">
           These forward-thinking wallets and bitcoin products have already adopted this convention:
@@ -267,7 +267,7 @@ export const Desktop = (): JSX.Element => {
       <section className="max-w-3xl mx-auto px-6 pb-12 md:pb-16">
         <p className="text-base md:text-[15px] leading-7 max-w-md">
           Have you spotted a bitcoin wallet or product that uses the ₿ symbol convention?{" "}
-          <span className="underline cursor-pointer">Drop us a line</span> and we'll add them here.
+          <a href="mailto:mat@spiral.xyz" className="underline cursor-pointer hover:text-gray-600" data-testid="link-drop-us-a-line">Drop us a line</a> and we'll add them here.
         </p>
       </section>
 
@@ -275,15 +275,15 @@ export const Desktop = (): JSX.Element => {
       <footer className="bg-[#939393] w-full py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-white text-sm md:text-[15px] leading-7 max-w-md">
-            This ₿ symbol convention originated with <span className="underline cursor-pointer">BIP-177</span> by John Carvhallo in late 2024.
+            This ₿ symbol convention originated with <a href="https://bips.dev/177/" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-200" data-testid="link-bip-177">BIP-177</a> by John Carvhallo in late 2024.
             <br /><br />
-            It is documented in the <span className="underline cursor-pointer">Bitcoin Design Guide</span>.
+            It is documented in the <a href="https://bitcoin.design/guide/designing-products/units-and-symbols/#-only-format" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-200" data-testid="link-bitcoin-design-guide">Bitcoin Design Guide</a>.
             <br /><br />
-            A fuller write-up is available in <span className="underline cursor-pointer">this post from Spiral</span>.
+            A fuller write-up is available in <a href="https://spiralbtc.substack.com/p/bringing-to-the-world" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-200" data-testid="link-spiral-post">this post from Spiral</a>.
             <br /><br />
-            A one-page PDF is available <span className="underline cursor-pointer">here</span>.
+            A one-page PDF is available <a href="/bitcoin-units.pdf" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-200" data-testid="link-pdf">here</a>.
             <br /><br />
-            This site created &amp; maintained by <span className="underline cursor-pointer">Mat Balez</span>.
+            This site created &amp; maintained by <a href="https://x.com/matbalez" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-200" data-testid="link-mat-balez">Mat Balez</a>.
           </p>
         </div>
       </footer>
