@@ -1,16 +1,54 @@
-import type { Express } from "express";
+import type { Express, Request, Response } from "express";
 import { createServer, type Server } from "http";
+import multer from "multer";
+import OpenAI, { toFile } from "openai";
 import { storage } from "./storage";
+
+const upload = multer({ storage: multer.memoryStorage() });
+
+const EDIT_PROMPT = `i want you to do a "surgical edit" to the uploaded image. it is a screenshot of a bitcoin wallet. the desire is to have all quantities shown in the screenshot represented in a consistent fashion. - any quantity you see in integer form that you see represented as "sats" should be instead prefaced with the ₿ symbol (and "sats" removed entirely). for example "34,222 sats" should instead be shown in the image as "₿34,222") - any quantity you see in decimal form prefaced with BTC or post-fixed with BTC should instead be shown prefixed with ₿. for example "BTC 0.00001234" should be shown as ₿1,234 and "0.00001234BTC" should also be shown as ₿1,234 you should detect and change all instances of quantities in the screenshot. you should adjust the positioning of the updated quantities so that alignment is preserved. you must not change any other details of the screenshot at all. overall, the resulting screenshot should look like it was precisely and minimally edited to have all of its bitcoin quantities represented in this new ₿-prefixed convention.`;
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  // put application routes here
-  // prefix all routes with /api
+  app.post(
+    "/api/edit-image",
+    upload.single("image"),
+    async (req: Request, res: Response) => {
+      try {
+        if (!req.file) {
+          return res.status(400).json({ message: "No image provided" });
+        }
+        if (!process.env.OPENAI_API_KEY) {
+          return res.status(500).json({ message: "OPENAI_API_KEY not configured" });
+        }
 
-  // use storage to perform CRUD operations on the storage interface
-  // e.g. storage.insertUser(user) or storage.getUserByUsername(username)
+        const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+        const file = await toFile(req.file.buffer, req.file.originalname || "screenshot.png", {
+          type: req.file.mimetype || "image/png",
+        });
+
+        const result = await client.images.edit({
+          model: "gpt-image-2",
+          image: file,
+          prompt: EDIT_PROMPT,
+        });
+
+        const b64 = result.data?.[0]?.b64_json;
+        if (!b64) {
+          return res.status(500).json({ message: "No image returned from API" });
+        }
+
+        return res.json({ image: `data:image/png;base64,${b64}` });
+      } catch (err: any) {
+        console.error("edit-image error:", err);
+        const message = err?.error?.message || err?.message || "Image edit failed";
+        return res.status(500).json({ message });
+      }
+    }
+  );
 
   return httpServer;
 }

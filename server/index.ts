@@ -49,7 +49,13 @@ app.use((req, res, next) => {
     if (path.startsWith("/api")) {
       let logLine = `${req.method} ${path} ${res.statusCode} in ${duration}ms`;
       if (capturedJsonResponse) {
-        logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
+        const serialized = JSON.stringify(capturedJsonResponse);
+        // Avoid logging large/base64 payloads (e.g. edited images)
+        if (serialized.length <= 500) {
+          logLine += ` :: ${serialized}`;
+        } else {
+          logLine += ` :: [response ${serialized.length} bytes omitted]`;
+        }
       }
 
       log(logLine);

@@ -1,4 +1,55 @@
+import { useRef, useState } from "react";
+
 export const Desktop = (): JSX.Element => {
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const [originalUrl, setOriginalUrl] = useState<string | null>(null);
+  const [resultUrl, setResultUrl] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const localUrl = URL.createObjectURL(file);
+    setOriginalUrl(localUrl);
+    setResultUrl(null);
+    setErrorMsg(null);
+    setModalOpen(true);
+    setIsLoading(true);
+    try {
+      const fd = new FormData();
+      fd.append("image", file);
+      const res = await fetch("/api/edit-image", { method: "POST", body: fd });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.message || "Upload failed");
+      setResultUrl(data.image);
+    } catch (err: any) {
+      setErrorMsg(err?.message || "Something went wrong");
+    } finally {
+      setIsLoading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    if (originalUrl) URL.revokeObjectURL(originalUrl);
+    setOriginalUrl(null);
+    setResultUrl(null);
+    setErrorMsg(null);
+  };
+
+  const downloadResult = () => {
+    if (!resultUrl) return;
+    const a = document.createElement("a");
+    a.href = resultUrl;
+    a.download = "bitcoin-units-edited.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+
   const wallets = [
     { name: "CASH APP", logo: "/figmaAssets/cashapp-2.png" },
     { name: "SQUARE", logo: "/figmaAssets/image-11.png" },
@@ -161,8 +212,20 @@ export const Desktop = (): JSX.Element => {
             <br /><br />
             Warning: experimental, YMMV!
           </p>
-          <div className="flex items-center justify-center border-[3px] border-dashed border-[#c6c4c4] rounded-2xl p-8 min-h-[160px]">
-            <span className="text-sm md:text-base underline cursor-pointer text-center">Upload screenshot</span>
+          <div
+            className="flex items-center justify-center border-[3px] border-dashed border-[#c6c4c4] rounded-2xl p-8 min-h-[160px] cursor-pointer hover:bg-gray-50"
+            onClick={() => fileInputRef.current?.click()}
+            data-testid="dropzone-upload"
+          >
+            <span className="text-sm md:text-base underline text-center">Upload screenshot</span>
+            <input
+              ref={fileInputRef}
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handleFile}
+              data-testid="input-screenshot"
+            />
           </div>
         </div>
       </section>
@@ -221,6 +284,64 @@ export const Desktop = (): JSX.Element => {
         </div>
       </footer>
 
+      {modalOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4"
+          onClick={closeModal}
+          data-testid="modal-result"
+        >
+          <div
+            className="bg-white rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto p-6 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={closeModal}
+              className="absolute top-3 right-4 text-2xl leading-none text-gray-500 hover:text-black"
+              aria-label="Close"
+              data-testid="button-close-modal"
+            >
+              ×
+            </button>
+            <h3 className="font-bold text-xl mb-4">Surgical ₿ edit</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-sm font-semibold mb-2 text-gray-600">Original</p>
+                {originalUrl && (
+                  <img src={originalUrl} alt="Original" className="w-full h-auto rounded-lg border border-[#ececec]" data-testid="img-original" />
+                )}
+              </div>
+              <div>
+                <p className="text-sm font-semibold mb-2 text-gray-600">Edited</p>
+                <div className="w-full min-h-[200px] rounded-lg border border-[#ececec] flex items-center justify-center bg-gray-50">
+                  {isLoading && (
+                    <div className="flex flex-col items-center gap-3 py-12" data-testid="status-loading">
+                      <div className="w-10 h-10 border-4 border-gray-300 border-t-black rounded-full animate-spin" />
+                      <p className="text-sm text-gray-600">Editing your screenshot…</p>
+                    </div>
+                  )}
+                  {!isLoading && resultUrl && (
+                    <img src={resultUrl} alt="Edited" className="w-full h-auto rounded-lg" data-testid="img-result" />
+                  )}
+                  {!isLoading && errorMsg && (
+                    <p className="text-sm text-red-600 p-4 text-center" data-testid="text-error">{errorMsg}</p>
+                  )}
+                </div>
+              </div>
+            </div>
+            {resultUrl && !isLoading && (
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={downloadResult}
+                  className="bg-black text-white px-5 py-2 rounded-lg font-semibold hover:bg-gray-800"
+                  data-testid="button-download"
+                >
+                  Download
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -30,6 +30,7 @@ An informational web app promoting the use of the ₿ symbol and bitcoin units, 
 - `server/storage.ts` uses a repository pattern; defaults to `MemStorage` but is wired for PostgreSQL.
 - Passport + passport-local packages are installed but auth is not yet implemented in routes.
 - Figma assets are stored as static files in `client/public/figmaAssets/`.
+- `POST /api/edit-image` (multer memory upload) → OpenAI `images.edit` (model `gpt-image-2`) for the "TRY IT OUT" screenshot feature. Requires `OPENAI_API_KEY`.
 
 ## Product
 - Informational site advocating for consistent use of the ₿ symbol and bitcoin denomination standards.
