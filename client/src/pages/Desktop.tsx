@@ -96,7 +96,7 @@ export const Desktop = (): JSX.Element => {
 
       {/* ===== ₿ IS BETTER ===== */}
       <section className="max-w-3xl mx-auto px-6 pt-2 md:pt-4 pb-12 md:pb-16">
-        <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">₿ IS BETTER</h2>
+        <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-6">₿ IS BETTER</h2>
         <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
           <p className="text-base md:text-[15px] leading-7">
             Historically, bitcoin wallets have shown bitcoin quantities as long decimal quantities, which are effectively illegible to the human eye.
@@ -115,7 +115,7 @@ export const Desktop = (): JSX.Element => {
 
       {/* ===== ₿ IS ON-BRAND ===== */}
       <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
-        <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">₿ IS ON-BRAND</h2>
+        <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-6">₿ IS ON-BRAND</h2>
         <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
           <p className="text-base md:text-[15px] leading-7">
             Thinking ahead, one day most of the world's prices will be denominated in quantities of bitcoin, as it becomes every day money.
@@ -134,7 +134,7 @@ export const Desktop = (): JSX.Element => {
 
       {/* ===== TEACH YOUR AGENT ===== */}
       <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
-        <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">TEACH YOUR AGENT</h2>
+        <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-6">TEACH YOUR AGENT</h2>
         <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
           <p className="text-base md:text-[15px] leading-7">
             With this convention being relatively new, AI agents may not yet be up to speed, given their training on legacy data.
@@ -152,7 +152,7 @@ export const Desktop = (): JSX.Element => {
 
       {/* ===== TRY IT OUT ===== */}
       <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
-        <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-6">TRY IT OUT</h2>
+        <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-6">TRY IT OUT</h2>
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <p className="text-base md:text-[15px] leading-7">
             Wonder what it might look like to have your favorite wallet or app that hasn't yet upgraded to this new convention, adopt it?
@@ -169,7 +169,7 @@ export const Desktop = (): JSX.Element => {
 
       {/* ===== JOIN THE ₿-LIST ===== */}
       <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
-        <h2 className="font-bold text-[clamp(28px,4.5vw,44px)] leading-none mb-4">JOIN THE ₿-LIST</h2>
+        <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-4">JOIN THE ₿-LIST</h2>
         <p className="text-base md:text-[15px] leading-7 mb-8">
           These forward-thinking wallets and bitcoin products have already adopted this convention:
         </p>
