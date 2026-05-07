@@ -383,8 +383,8 @@ export const Desktop = (): JSX.Element => {
                 </div>
               </div>
             </div>
-            {/* Mobile pagination dots */}
-            <div className="md:hidden flex justify-center gap-2 mt-4" data-testid="carousel-dots">
+            {/* Mobile pagination dots — sticky to bottom of modal so always visible */}
+            <div className="md:hidden sticky bottom-0 -mx-6 px-6 py-3 bg-white/95 backdrop-blur flex justify-center gap-2 mt-2" data-testid="carousel-dots">
               {[0, 1].map((i) => (
                 <button
                   key={i}
