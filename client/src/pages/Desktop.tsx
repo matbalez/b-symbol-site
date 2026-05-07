@@ -71,7 +71,7 @@ export const Desktop = (): JSX.Element => {
                 className="block w-full h-auto object-contain"
               />
               {/* Short light-gray divider exactly under the iPhone width */}
-              <hr className="border-t border-[#d8d8d8] w-5/6 mx-auto m-0" />
+              <hr className="border-t border-[#ececec] w-5/6 mx-auto m-0" />
             </div>
           </div>
 
@@ -177,9 +177,9 @@ export const Desktop = (): JSX.Element => {
           {wallets.map((wallet) => (
             <div
               key={wallet.name}
-              className="flex items-stretch border border-[#d8d8d8] -mt-px bg-white h-[96px]"
+              className="flex items-stretch border border-[#ececec] -mt-px bg-white h-[96px]"
             >
-              <div className="w-32 md:w-36 flex-shrink-0 flex items-center justify-center border-r border-[#d8d8d8] p-5">
+              <div className="w-32 md:w-36 flex-shrink-0 flex items-center justify-center border-r border-[#ececec] p-5">
                 <img
                   src={wallet.logo}
                   alt={wallet.name}
