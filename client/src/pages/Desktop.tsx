@@ -111,7 +111,7 @@ export const Desktop = (): JSX.Element => {
             <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px]">
               USE
             </h1>
-            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] pl-[14%]">
+            <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] pl-[22%]">
               THE
             </h1>
             <h1 className="font-bold leading-[1.05] tracking-tight text-[80px] lg:text-[92px] mt-12 lg:mt-16">
