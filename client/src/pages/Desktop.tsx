@@ -169,7 +169,7 @@ export const Desktop = (): JSX.Element => {
         <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-6">₿ IS ON-BRAND</h2>
         <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
           <p className="text-base md:text-[15px] leading-7">
-            Thinking ahead, one day most of the world's prices will be denominated in quantities of bitcoin, as it becomes every day money.
+            Thinking ahead, one day most of the world's prices will be denominated in quantities of bitcoin, as it becomes everyday money.
             <br /><br />
             Continuing on a path of using "sats" to denote amounts of bitcoin would mean losing the bitcoin brand from this pricing surface area altogether.
             <br /><br />
