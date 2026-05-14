@@ -341,7 +341,7 @@ export const Desktop = (): JSX.Element => {
         <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
           <div className="text-base md:text-[15px] leading-7 space-y-5">
             <p>
-              Once you're using ₿ for bitcoin amounts, you'll naturally be typing it a lot more. Unfortunately, ₿ is not on keyboards so it's hard to type.
+              Once you're using ₿ for bitcoin amounts, you'll naturally be typing it a lot more. Unfortunately, ₿ is not (yet) on physical keyboards so it's hard to type.
             </p>
             <p>
               So we need some workarounds. The obvious-yet-annoying thing to do is to Google search for "bitcoin symbol" and copy &amp; paste it. Better is to adopt the following shortcuts:
