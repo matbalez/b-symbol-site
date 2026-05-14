@@ -371,7 +371,7 @@ export const Desktop = (): JSX.Element => {
             </div>
             <p>Now typing "bb" will now automatically suggest ₿.</p>
             <div>
-              <p className="font-bold">On Windows machines</p>
+              <p className="font-bold">On Windows</p>
               <p>Click where you want the symbol to appear.</p>
               <p>Turn Num Lock on.</p>
               <p>Hold down the Alt key.</p>
