@@ -322,7 +322,7 @@ export const Desktop = (): JSX.Element => {
       <section className="max-w-3xl mx-auto px-6 pb-4 md:pb-8">
         <p className="text-base md:text-[15px] leading-7 max-w-md">
           Have you spotted a bitcoin wallet or product that uses the ₿ symbol convention?{" "}
-          <a href="mailto:mat@spiral.xyz" className="underline cursor-pointer hover:text-gray-600" data-testid="link-drop-us-a-line">Drop us a line</a> and we'll add them here.
+          <a href="mailto:bsymbol@spiral.xyz" className="underline cursor-pointer hover:text-gray-600" data-testid="link-drop-us-a-line">Drop us a line</a> and we'll add them here.
         </p>
       </section>
 
