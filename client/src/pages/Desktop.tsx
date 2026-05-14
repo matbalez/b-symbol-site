@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import keyboardKeyImg from "@assets/ChatGPT_Image_May_13,_2026,_05_05_46_PM_1778717313073.png";
 
 export const Desktop = (): JSX.Element => {
   const fileInputRef = useRef<HTMLInputElement | null>(null);
@@ -307,6 +308,58 @@ export const Desktop = (): JSX.Element => {
               </div>
             </a>
           ))}
+        </div>
+      </section>
+
+      {/* ===== TYPING ₿ ON YOUR DEVICE ===== */}
+      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
+        <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-6">TYPING ₿ ON YOUR DEVICE</h2>
+        <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
+          <div className="text-base md:text-[15px] leading-7 space-y-5">
+            <p>
+              Once you're using ₿ for bitcoin amounts, you'll naturally be typing it a lot more. Unfortunately, ₿ is not on keyboards so it's hard to type.
+            </p>
+            <p>
+              So we need some workarounds. The obvious-yet-annoying thing to do is to Google search for "bitcoin symbol" and copy &amp; paste it. Better is to adopt the following shortcuts:
+            </p>
+            <div>
+              <p className="font-bold">On MacOS</p>
+              <p>Go to System Settings &gt; Keyboard &gt; Text Replacements</p>
+              <p>Click the + button</p>
+              <p>Under "Replace", enter a short trigger phrase, such as "₿"</p>
+              <p>Under "With" paste the bitcoin symbol: ₿</p>
+            </div>
+            <div>
+              <p className="font-bold">On iOS</p>
+              <p>Go to Settings &gt; General &gt; Keyboard &gt; Text Replacement</p>
+              <p>Tap the +</p>
+              <p>Paste ₿ into the Phrase field.</p>
+              <p>Enter a shortcut like "bb" in the Shortcut field</p>
+            </div>
+            <div>
+              <p className="font-bold">On Android</p>
+              <p>Go to Settings &gt; System &gt; Languages &amp; input &gt; Personal dictionary</p>
+              <p>Choose your language</p>
+              <p>Tap the + button</p>
+              <p>Paste ₿ into the main text field</p>
+              <p>Add a shortcut like "bb"</p>
+              <p>Save</p>
+            </div>
+            <p>Now typing "bb" will now automatically suggest ₿.</p>
+            <div>
+              <p className="font-bold">On Windows machines</p>
+              <p>Click where you want the symbol to appear.</p>
+              <p>Turn Num Lock on.</p>
+              <p>Hold down the Alt key.</p>
+              <p>While holding Alt, type 8383 on the numeric keypad.</p>
+            </div>
+          </div>
+          <img
+            src={keyboardKeyImg}
+            alt="Bitcoin symbol on a keyboard key"
+            className="w-3/4 md:w-[220px] h-auto object-contain justify-self-center md:justify-self-start"
+            data-testid="img-keyboard-key"
+          />
         </div>
       </section>
 
