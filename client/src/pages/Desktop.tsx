@@ -342,7 +342,7 @@ export const Desktop = (): JSX.Element => {
               <p className="font-bold">On MacOS</p>
               <p>Go to System Settings &gt; Keyboard &gt; Text Replacements</p>
               <p>Click the + button</p>
-              <p>Under "Replace", enter a short trigger phrase, such as "₿"</p>
+              <p>Under "Replace", enter a short trigger phrase, such as "bb"</p>
               <p>Under "With" paste the bitcoin symbol: ₿</p>
             </div>
             <div>
