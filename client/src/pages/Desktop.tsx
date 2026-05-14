@@ -102,6 +102,13 @@ export const Desktop = (): JSX.Element => {
               see the ₿-list
             </a>
             <a
+              href="#typing-the-b"
+              className="text-sm underline hover:text-gray-600"
+              data-testid="link-header-typing"
+            >
+              typing the ₿
+            </a>
+            <a
               href="/skill.md"
               target="_blank"
               rel="noopener noreferrer"
@@ -311,9 +318,18 @@ export const Desktop = (): JSX.Element => {
         </div>
       </section>
 
-      {/* ===== TYPING ₿ ON YOUR DEVICE ===== */}
-      <section className="max-w-3xl mx-auto px-6 py-12 md:py-16">
-        <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-6">TYPING ₿ ON YOUR DEVICE</h2>
+      {/* ===== TYPING THE ₿ ===== */}
+      <section id="typing-the-b" className="max-w-3xl mx-auto px-6 py-12 md:py-16 scroll-mt-8">
+        {/* Mobile-only: keyboard image above heading */}
+        <div className="md:hidden flex justify-center mb-8">
+          <img
+            src={keyboardKeyImg}
+            alt="Bitcoin symbol on a keyboard key"
+            className="w-3/4 h-auto object-contain"
+            data-testid="img-keyboard-key-mobile"
+          />
+        </div>
+        <h2 className="font-bold text-[clamp(24px,3.8vw,37px)] leading-none mb-6">TYPING THE ₿</h2>
         <div className="grid md:grid-cols-[minmax(0,360px)_1fr] gap-10 items-start">
           <div className="text-base md:text-[15px] leading-7 space-y-5">
             <p>
@@ -357,7 +373,7 @@ export const Desktop = (): JSX.Element => {
           <img
             src={keyboardKeyImg}
             alt="Bitcoin symbol on a keyboard key"
-            className="w-3/4 md:w-[220px] h-auto object-contain justify-self-center md:justify-self-start"
+            className="hidden md:block md:w-[220px] h-auto object-contain md:justify-self-start md:ml-10"
             data-testid="img-keyboard-key"
           />
         </div>
