@@ -78,7 +78,7 @@ export const Desktop = (): JSX.Element => {
     { name: "CASHU", logo: "/figmaAssets/image-13.png", url: "https://wallet.cashu.me/welcome" },
     { name: "AGICASH", logo: "/figmaAssets/oabxam9h-400x400-2.png", url: "https://agi.cash/" },
     { name: "STASH PAY", logo: "/figmaAssets/image-16.png", url: "https://stashpay.me/" },
-    { name: "MANNA WALLET", logo: "/figmaAssets/manna-wallet.png", url: "https://mannabitcoin.com/" },
+    { name: "MANNA WALLET", logo: "/figmaAssets/manna-wallet.png", url: "https://mannabitcoin.com/", logoClass: "max-w-full max-h-20 object-contain" },
   ];
 
   return (
@@ -306,7 +306,7 @@ export const Desktop = (): JSX.Element => {
                 <img
                   src={wallet.logo}
                   alt={wallet.name}
-                  className="max-w-full max-h-12 object-contain"
+                  className={(wallet as { logoClass?: string }).logoClass ?? "max-w-full max-h-12 object-contain"}
                 />
               </div>
               <div className="flex-1 flex items-center pl-10 pr-6 py-4">
