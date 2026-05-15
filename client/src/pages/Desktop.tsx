@@ -78,6 +78,7 @@ export const Desktop = (): JSX.Element => {
     { name: "CASHU", logo: "/figmaAssets/image-13.png", url: "https://wallet.cashu.me/welcome" },
     { name: "AGICASH", logo: "/figmaAssets/oabxam9h-400x400-2.png", url: "https://agi.cash/" },
     { name: "STASH PAY", logo: "/figmaAssets/image-16.png", url: "https://stashpay.me/" },
+    { name: "MANNA WALLET", logo: "/figmaAssets/manna-wallet.png", url: "https://mannabitcoin.com/" },
   ];
 
   return (
