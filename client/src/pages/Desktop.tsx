@@ -392,7 +392,7 @@ export const Desktop = (): JSX.Element => {
       <footer className="bg-[#939393] w-full py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-6">
           <p className="text-white text-sm md:text-[15px] leading-7 max-w-md">
-            This ₿ symbol convention originated with <a href="https://bips.dev/177/" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-200" data-testid="link-bip-177">BIP-177</a> by John Carvhallo in late 2024.
+            This ₿ symbol convention originated with <a href="https://bips.dev/177/" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-200" data-testid="link-bip-177">BIP-177</a> by John Carvalho in late 2024.
             <br /><br />
             It is documented in the <a href="https://bitcoin.design/guide/designing-products/units-and-symbols/#-only-format" target="_blank" rel="noopener noreferrer" className="underline cursor-pointer hover:text-gray-200" data-testid="link-bitcoin-design-guide">Bitcoin Design Guide</a>.
             <br /><br />
