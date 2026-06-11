@@ -79,6 +79,8 @@ export const Desktop = (): JSX.Element => {
     { name: "AGICASH", logo: "/figmaAssets/oabxam9h-400x400-2.png", url: "https://agi.cash/" },
     { name: "STASH PAY", logo: "/figmaAssets/image-16.png", url: "https://stashpay.me/" },
     { name: "MANNA WALLET", logo: "/figmaAssets/manna-wallet.png", url: "https://mannabitcoin.com/", logoClass: "max-w-full max-h-20 object-contain" },
+    { name: "ARKÉ", logo: "/figmaAssets/arke.png", url: "https://arke.cash/" },
+    { name: "NOAH WALLET", logo: "/figmaAssets/noah-wallet.png", url: "https://beta.noahwallet.io/" },
   ];
 
   return (
